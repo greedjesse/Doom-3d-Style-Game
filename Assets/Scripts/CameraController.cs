@@ -1,4 +1,3 @@
-using UnityEditorInternal;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -20,9 +19,12 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         GatherInput();
-        
-        HandlePosition();
         HandleRotation();
+    }
+
+    private void FixedUpdate()
+    {
+        HandlePosition();
     }
 
     private void GatherInput()
@@ -66,8 +68,8 @@ public class CameraController : MonoBehaviour
     
     private void HandleRotation()
     {
-        if (rightRotateToConsume) _targetYAngle -= anglePerStep;
-        if (leftRotateToConsumue) _targetYAngle += anglePerStep;
+        if (rightRotateToConsume) _targetYAngle += anglePerStep;
+        if (leftRotateToConsumue) _targetYAngle -= anglePerStep;
         rightRotateToConsume = false;
         leftRotateToConsumue = false;
         

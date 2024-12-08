@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BillBoard : MonoBehaviour
+public class Billboard : MonoBehaviour
 {
     [SerializeField] private BillboardType billboardType;
     private enum BillboardType { LookAtCamera, CameraForward }
