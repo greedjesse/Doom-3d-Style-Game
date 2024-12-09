@@ -150,7 +150,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Sprite-0001
+    - name: Tree01_grayscaled
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
