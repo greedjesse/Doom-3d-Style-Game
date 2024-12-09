@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4332785558730488580}
   - component: {fileID: 7644468075001326378}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7721726740823597792}
   - component: {fileID: 2046423185429215001}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree 05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4739532088082288059}
   - component: {fileID: 3856279242246969715}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,10 +153,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree05_grayscaled
       objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: 7f22a6a48b279474798f19c06b7a7020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 7f22a6a48b279474798f19c06b7a7020,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 7f22a6a48b279474798f19c06b7a7020,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 7f22a6a48b279474798f19c06b7a7020,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 51929839
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 7f22a6a48b279474798f19c06b7a7020,
         type: 3}
@@ -238,6 +253,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree05_colored
+      objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: dae3fcc57011f4c4ea12f587ec790730,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: dae3fcc57011f4c4ea12f587ec790730,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: dae3fcc57011f4c4ea12f587ec790730,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 51929839
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: dae3fcc57011f4c4ea12f587ec790730,
         type: 3}
