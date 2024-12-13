@@ -1,7 +1,12 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraController : MonoBehaviour
 {
+    [SerializeField] private Slider _slider = null;
+    [SerializeField] private TextMeshProUGUI _sliderText;
+    
     [SerializeField] private Transform camera;
     [SerializeField] private Transform player;
     
@@ -18,6 +23,12 @@ public class CameraController : MonoBehaviour
     
     void Update()
     {
+        _slider.onValueChanged.AddListener((v) =>
+        {
+            _sliderText.text = "Elevation Angle: " + v.ToString("0");
+            elevationAngle = v;
+        });
+        
         GatherInput();
         HandleRotation();
     }
