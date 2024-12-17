@@ -1,21 +1,26 @@
-Shader "Unlit/Light"
+Shader "Unlit/LightOutsideSphere"
 {
     Properties
     {
-        _Color ("Color", Color) = (1, 1, 1, 0.5)
+        [HDR]_Color ("Color", Color) = (1, 1, 1, 0.5)
     }
     SubShader
     {
         Tags { 
             "RenderType"="Transparent"
-            "Queue"="Transparent"
+            "Queue"="Transparent+1"
         }
         LOD 100
+        Zwrite Off
+        Blend DstColor One
 
         Stencil
         {
             Ref 1
             Comp Equal
+            Pass Zero
+            Fail Zero
+            Zfail Zero
         }
         
         Pass

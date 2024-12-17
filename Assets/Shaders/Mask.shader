@@ -7,10 +7,10 @@ Shader "Unlit/Mask"
     {
         Tags {
             "RenderType"="Transparent"
-            "Queue"="Transparent-1"
+            "Queue"="Transparent+1"
         }
         LOD 100
-        Ztest Greater
+        ZTest Greater
         ZWrite Off
         Cull Front
         ColorMask 0
