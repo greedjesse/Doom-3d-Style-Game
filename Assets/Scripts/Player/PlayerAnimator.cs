@@ -5,7 +5,7 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private Animator animator;
     private Rigidbody _rb;
 
-    private float _speed;
+    public float _speed;
 
     void Start()
     {
@@ -14,7 +14,7 @@ public class PlayerAnimator : MonoBehaviour
 
     void Update()
     {
-        _speed = Mathf.Pow(_rb.velocity.x, 2) + Mathf.Pow(_rb.velocity.z, 2);
-        animator.SetFloat("Speed", _speed);
+        // _speed = Mathf.Pow(_rb.velocity.x, 2) + Mathf.Pow(_rb.velocity.z, 2);
+        // animator.SetFloat("Speed", _speed / 15.0f);
     }
 }
