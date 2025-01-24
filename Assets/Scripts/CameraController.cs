@@ -9,11 +9,14 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
+        // Setup pivot default position.
+        transform.position = player.transform.position + new Vector3(0, heightOffset, 0);
+        
         // Setup camera position.
-        camera.position = new Vector3(0f, 0f, -cameraZOffset);
+        camera.localPosition = new Vector3(0f, 0f, -cameraZOffset);
         
         // Setup camera rotation.
-        anglePerStep = 360.0f / stepsPerRotation;
+        _anglePerStep = 360.0f / stepsPerRotation;
     }
     
     void Update()
@@ -34,8 +37,8 @@ public class CameraController : MonoBehaviour
         _inputs.RightArrowDown = Input.GetKeyDown(KeyCode.RightArrow);
         _inputs.LeftArrowDown = Input.GetKeyDown(KeyCode.LeftArrow);
 
-        if (_inputs.RightArrowDown) rightRotateToConsume = true;
-        if (_inputs.LeftArrowDown) leftRotateToConsumue = true;
+        if (_inputs.RightArrowDown) _rightRotateToConsume = true;
+        if (_inputs.LeftArrowDown) _leftRotateToConsumue = true;
     }
 
 #region Position
@@ -59,19 +62,19 @@ public class CameraController : MonoBehaviour
     [SerializeField] [Range(0.0f, 90.0f)] private float elevationAngle = 30.0f;
     [SerializeField] private float rotateSpeedFactor = 15.0f;
     [SerializeField] private int stepsPerRotation = 6;
-    private float anglePerStep = 0.0f;
+    private float _anglePerStep = 0.0f;
     private float _targetYAngle = 0.0f;
     private float _actualYAngle = 0.0f;
 
-    private bool rightRotateToConsume = false;
-    private bool leftRotateToConsumue = false;
+    private bool _rightRotateToConsume = false;
+    private bool _leftRotateToConsumue = false;
     
     private void HandleRotation()
     {
-        if (rightRotateToConsume) _targetYAngle += anglePerStep;
-        if (leftRotateToConsumue) _targetYAngle -= anglePerStep;
-        rightRotateToConsume = false;
-        leftRotateToConsumue = false;
+        if (_rightRotateToConsume) _targetYAngle += _anglePerStep;
+        if (_leftRotateToConsumue) _targetYAngle -= _anglePerStep;
+        _rightRotateToConsume = false;
+        _leftRotateToConsumue = false;
         
         _actualYAngle = Mathf.LerpAngle(_actualYAngle, _targetYAngle, rotateSpeedFactor * Time.deltaTime);
         Vector3 angle = new Vector3(elevationAngle, _actualYAngle, 0.0f);
