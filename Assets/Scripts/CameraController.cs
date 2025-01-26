@@ -10,7 +10,11 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         // Setup pivot default position.
-        transform.position = player.transform.position + new Vector3(0, heightOffset, 0);
+        transform.position = LevelLoader.PlayerSpawnPosition + new Vector3(0, heightOffset, 0);
+        
+        // Setup default direction.
+        _actualYAngle = LevelLoader.CameraYDirection;
+        _targetYAngle = _actualYAngle;
         
         // Setup camera position.
         camera.localPosition = new Vector3(0f, 0f, -cameraZOffset);
@@ -38,7 +42,7 @@ public class CameraController : MonoBehaviour
         _inputs.LeftArrowDown = Input.GetKeyDown(KeyCode.LeftArrow);
 
         if (_inputs.RightArrowDown) _rightRotateToConsume = true;
-        if (_inputs.LeftArrowDown) _leftRotateToConsumue = true;
+        if (_inputs.LeftArrowDown) _leftRotateToConsume = true;
     }
 
 #region Position
@@ -67,14 +71,14 @@ public class CameraController : MonoBehaviour
     private float _actualYAngle = 0.0f;
 
     private bool _rightRotateToConsume = false;
-    private bool _leftRotateToConsumue = false;
+    private bool _leftRotateToConsume = false;
     
     private void HandleRotation()
     {
         if (_rightRotateToConsume) _targetYAngle += _anglePerStep;
-        if (_leftRotateToConsumue) _targetYAngle -= _anglePerStep;
+        if (_leftRotateToConsume) _targetYAngle -= _anglePerStep;
         _rightRotateToConsume = false;
-        _leftRotateToConsumue = false;
+        _leftRotateToConsume = false;
         
         _actualYAngle = Mathf.LerpAngle(_actualYAngle, _targetYAngle, rotateSpeedFactor * Time.deltaTime);
         Vector3 angle = new Vector3(elevationAngle, _actualYAngle, 0.0f);

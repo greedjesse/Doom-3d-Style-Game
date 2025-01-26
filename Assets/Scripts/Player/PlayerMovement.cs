@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        transform.position = LevelLoader.PlayerSpawnPosition;
     }
     
     void Update()
