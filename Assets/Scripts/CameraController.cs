@@ -54,7 +54,7 @@ public class CameraController : MonoBehaviour
     
     private void HandlePosition()
     {
-        Vector3 targetPosition = player.transform.position + new Vector3(0, heightOffset, 0);
+         Vector3 targetPosition = player.transform.position + new Vector3(0, heightOffset, 0);
         transform.position += (targetPosition - transform.position) / speedFactor * Time.deltaTime;
     }
     

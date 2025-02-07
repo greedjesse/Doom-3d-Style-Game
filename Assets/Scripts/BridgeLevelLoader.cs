@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class BridgeLevelLoader : MonoBehaviour
 {
+    [SerializeField] private PlayerMovement player;
     [SerializeField] private LevelLoader levelLoader;
-    // [SerializeField] private Animator animator;
 
     [SerializeField] private Vector3 playerSpawnPosition;
     [SerializeField] private float cameraDirection;
@@ -16,19 +16,19 @@ public class BridgeLevelLoader : MonoBehaviour
     private bool CanTransfer => _timeHeld == timeNeededToHeld; 
     private bool _transferred;
 
-    private bool _collided;
+    [HideInInspector] public bool collided;
 
     void Start()
     {
         _timeHeld = 0.0f;
         _transferred = false;
-        _collided = false;
+        collided = false;
     }
     
     void Update()
     {
         _eHeld = Input.GetKey(KeyCode.E);
-        if (_eHeld && _collided)
+        if (_eHeld && collided)
         {
             _timeHeld += Time.deltaTime;
             _timeHeld = Math.Min(timeNeededToHeld, _timeHeld);
@@ -44,7 +44,8 @@ public class BridgeLevelLoader : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            _collided = true;
+            collided = true;
+            player.insideTeleporter = true;
         }
     }
 
@@ -52,7 +53,8 @@ public class BridgeLevelLoader : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            _collided = false;
+            collided = false;
+            player.insideTeleporter = false;
         }
     }
 

@@ -5,6 +5,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform UI;
     private Rigidbody rb;
 
+    public bool insideTeleporter;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -33,8 +35,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 #endregion
-    
-    
+
 #region Run
 
     [SerializeField] private float maxSpeed;

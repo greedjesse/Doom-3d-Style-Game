@@ -1875,6 +1875,8 @@ GameObject:
   - component: {fileID: 643377851}
   - component: {fileID: 643377850}
   - component: {fileID: 643377853}
+  - component: {fileID: 643377854}
+  - component: {fileID: 643377855}
   m_Layer: 0
   m_Name: E
   m_TagString: Untagged
@@ -1902,7 +1904,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eae1f2296687edc4296c317b195a92b5, type: 2}
+  - {fileID: 2100000, guid: f802e777fca7d5e4e8f83a3403907c08, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1940,12 +1942,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643377848}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.7, z: 6.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 850942285}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &643377853
 MonoBehaviour:
@@ -1960,6 +1962,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   billboardType: 1
+--- !u!114 &643377854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643377848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9728edf713ed5944b8d14c17ca83ce0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 951009103}
+  keyCode: 101
+  material: {fileID: 2100000, guid: f802e777fca7d5e4e8f83a3403907c08, type: 2}
+  initialScale: 0.6
+  sizeDecreaseOffset: 0.05
+  scaleSpeedFactor: 6
+  alphaSpeedFactor: 3
+--- !u!65 &643377855
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643377848}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &652495716 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7401456376768517826, guid: 0e1c681b3681f3a4ab240da6acd0e739,
@@ -2169,6 +2211,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1072539762}
+  - {fileID: 643377852}
   m_Father: {fileID: 951009104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &850942286
@@ -2490,6 +2533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI: {fileID: 1072539762}
+  insideTeleporter: 0
   maxSpeed: 8
   acceleration: 0.8
   deceleration: 2
@@ -3273,7 +3317,7 @@ GameObject:
   - component: {fileID: 1211863115}
   m_Layer: 0
   m_Name: -2 Bridge
-  m_TagString: Untagged
+  m_TagString: Button E Display
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3290,11 +3334,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70823240f18492f49b44a972a1197da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 951009103}
   levelLoader: {fileID: 6365885612084378883}
   playerSpawnPosition: {x: 0, y: 0.055, z: 0}
   cameraDirection: 0
   destination: 1
   timeNeededToHeld: 0.5
+  collided: 0
 --- !u!65 &1211863116
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5369,4 +5415,3 @@ SceneRoots:
   - {fileID: 296967263}
   - {fileID: 1211863117}
   - {fileID: 1196660655}
-  - {fileID: 643377852}
