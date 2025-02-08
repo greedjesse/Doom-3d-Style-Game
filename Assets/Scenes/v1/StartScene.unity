@@ -3095,7 +3095,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eb6858040a8d6c04ea7ca74b76a04851, type: 2}
+  - {fileID: 2100000, guid: be21fe05ca2a20445ab56ba8490f5834, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3336,10 +3336,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 951009103}
   levelLoader: {fileID: 6365885612084378883}
+  arrowMat: {fileID: 2100000, guid: be21fe05ca2a20445ab56ba8490f5834, type: 2}
   playerSpawnPosition: {x: 0, y: 0.055, z: 0}
   cameraDirection: 0
   destination: 1
-  timeNeededToHeld: 0.5
+  timeNeededToHeld: 0.75
   collided: 0
 --- !u!65 &1211863116
 BoxCollider:
@@ -3360,7 +3361,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 2.5, y: 3, z: 2.5}
   m_Center: {x: 0, y: 1.5, z: 6.5}
 --- !u!4 &1211863117
 Transform:

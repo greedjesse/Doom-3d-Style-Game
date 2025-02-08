@@ -225,10 +225,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 292452031}
+  keyCode: 101
   material: {fileID: 2100000, guid: f802e777fca7d5e4e8f83a3403907c08, type: 2}
-  _matColor: 0
-  alphaSpeedFactor: 6
-  _alpha: 0
+  initialScale: 0.6
+  sizeDecreaseOffset: 0.05
+  scaleSpeedFactor: 6
+  alphaSpeedFactor: 3
 --- !u!114 &36304975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2938,7 +2940,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eb6858040a8d6c04ea7ca74b76a04851, type: 2}
+  - {fileID: 2100000, guid: 5c0748e097e56d743b76c97dbfff4ba6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4496,7 +4498,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eb6858040a8d6c04ea7ca74b76a04851, type: 2}
+  - {fileID: 2100000, guid: be21fe05ca2a20445ab56ba8490f5834, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5040,6 +5042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 292452031}
   levelLoader: {fileID: 549001908}
+  arrowMat: {fileID: 2100000, guid: 5c0748e097e56d743b76c97dbfff4ba6, type: 2}
   playerSpawnPosition: {x: 0, y: 0.055, z: 6.5}
   cameraDirection: 180
   destination: 0
